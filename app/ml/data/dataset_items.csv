@@ -1,0 +1,66 @@
+text,label
+
+"Menú del día 12,50 €",item
+"Café con leche 1,80 €",item
+"Copa vino tinto 4,50 €",item
+"Botella agua mineral 2,00 €",item
+"2 x Café 1,50 €",item
+"1 Ud Hamburguesa 8,90 €",item
+"Cambio aceite motor 65,00 €",item
+"Filtro aire coche 15,00 €",item
+"Reparación pantalla móvil 120,00 €",item
+"Licencia software anual 99,99 €",item
+"Dominio web .com 12,00 €",item
+"Hosting mensual 8,50 €",item
+"Mantenimiento web 250,00 €",item
+"Taxi aeropuerto Madrid 23,40 €",item
+"Billete tren Madrid Barcelona 45,00 €",item
+"Compra supermercado 34,20 €",item
+"Pan barra 1,10 €",item
+"Leche entera 0,95 €",item
+"Huevos docena 2,40 €",item
+"Ordenador portátil 899,00 €",item
+"Ratón inalámbrico 15,00 €",item
+"Monitor 24 pulgadas 129,99 €",item
+"Consulta médica privada 60,00 €",item
+"Medicamento farmacia 12,75 €",item
+"Gasolina 40,00 €",item
+"Fibra Óptica 600 Mb",item
+"Línea móvil ilimitada",item
+"Router WiFi",item
+
+"TOTAL 41,47 €",no_item
+"Total a pagar 300,00 €",no_item
+"Importe total 120,00 €",no_item
+"Subtotal 100,00 €",no_item
+"Base imponible 82,64 €",no_item
+"IVA 21% 17,36 €",no_item
+"IRPF 0,00 €",no_item
+"Descuento aplicado 10,00 €",no_item
+"TOTAL A PAGAR 500,00 €",no_item
+
+"Factura Nº 12345",no_item
+"Nº Factura: F-2026-001",no_item
+"Fecha: 28/02/2026",no_item
+"28/02/2026",no_item
+"CIF: B12345678",no_item
+"NIF: 12345678A",no_item
+"Dirección: Calle Mayor 5",no_item
+"Teléfono: 912345678",no_item
+"Email: contacto@empresa.com",no_item
+"contacto@gmail.com",no_item
+"www.empresa.com",no_item
+
+"TeleRed Fibra y Móvil, S.A.",no_item
+"Mercadona S.A.",no_item
+"Carrefour España S.L.",no_item
+"Repsol S.A.",no_item
+
+"Calle Mayor 12 Madrid",no_item
+"Paseo Marítimo 12 28045 Madrid",no_item
+"Avenida de América 45",no_item
+
+"15/04/2024",no_item
+"2026-01-12",no_item
+"15.04.2024",no_item
+"2026.01.12",no_item

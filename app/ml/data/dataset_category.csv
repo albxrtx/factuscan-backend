@@ -1,0 +1,98 @@
+text,label
+
+"compra semanal en mercadona leche pan fruta",supermercado
+"ticket carrefour comida hogar 34.20€",supermercado
+"lidl alimentos cesta basica arroz huevos",supermercado
+"compra supermercado verduras carne pescado",supermercado
+"supermercado dia compra productos basicos",supermercado
+
+"menu del dia restaurante 12.50€ postre",restaurante
+"cena bar tapas cerveza raciones",restaurante
+"pizzeria pizza familiar bebida 18€",restaurante
+"restaurante comida vino copa mesa",restaurante
+"hamburguesa kebab cena rapida local",restaurante
+
+"uber madrid viaje aeropuerto 23€",transporte
+"cabify traslado ciudad centro hotel",transporte
+"billete renfe tren madrid barcelona",transporte
+"taxi aeropuerto noche 35 euros",transporte
+"viaje transporte publico metro bus",transporte
+
+"taller coche cambio aceite filtro 65€",mecanico
+"reparacion vehiculo frenos ruedas",mecanico
+"neumaticos cambio taller revision coche",mecanico
+"mecanico revision motor averia coche",mecanico
+
+"iberdrola factura luz mes 89€",suministros
+"endesa consumo electricidad hogar",suministros
+"agua factura consumo vivienda",suministros
+"recibo luz gas electricidad casa",suministros
+
+"movistar fibra internet 600mb factura",telecomunicaciones
+"vodafone tarifa movil datos ilimitados",telecomunicaciones
+"orange internet hogar router wifi",telecomunicaciones
+"factura telefono fijo internet mensual",telecomunicaciones
+"fibra internet 600 mb router wifi",telecomunicaciones
+"tarifa movil datos ilimitados 5g",telecomunicaciones
+"linea fija telefono internet hogar",telecomunicaciones
+"vodafone fibra optica internet",telecomunicaciones
+
+"amazon compra online pedido envio",compras
+"zara ropa moda tienda ticket",compras
+"decathlon material deporte compra",compras
+"fnac electronica libros musica",compras
+
+"pccomponentes ordenador portatil gaming",informatica
+"reparacion pc servicio tecnico windows",informatica
+"licencia software suscripcion anual",informatica
+"hosting web dominio servidor cloud",informatica
+
+"netflix suscripcion mensual streaming",ocio
+"spotify musica premium suscripcion",ocio
+"cine entrada pelicula estreno",ocio
+"ocio tiempo libre entretenimiento",ocio
+
+"hotel reserva booking vacaciones",viajes
+"vuelo avion billete iberia",viajes
+"apartamento alquiler vacaciones verano",viajes
+"viaje turismo alojamiento ciudad",viajes
+
+"glovo comida domicilio hamburguesa",comida
+"just eat pedido pizza casa",comida
+"burger king menu rapido entrega",comida
+"pedido comida domicilio cena rapida",comida
+
+"aws servidor cloud hosting base datos",it
+"microsoft azure infraestructura cloud",it
+"github copilot programacion codigo ai",it
+"zoom videollamada reuniones online",it
+
+"sanitas seguro medico consulta privada",salud
+"farmacia medicamentos receta compra",salud
+"consulta medico privado visita",salud
+"gimnasio cuota mensual fitness",salud
+
+"bbva transferencia bancaria comision",finanzas
+"santander tarjeta credito cuota",finanzas
+"revolut cambio divisa extranjero pago",finanzas
+"banco movimiento cuenta ingreso",finanzas
+
+"ikea muebles hogar decoracion compra",casa
+"leroy merlin reforma bricolaje casa",casa
+"bricomart materiales construccion hogar",casa
+"decoracion vivienda muebles estanteria",casa
+
+"apple store iphone compra movil",tecnologia
+"mediamarkt television electrodomesticos",tecnologia
+"fnac tecnologia electronica gadgets",tecnologia
+"compra ordenador smartphone tablet",tecnologia
+
+"correos envio paquete certificado",logistica
+"dhl envio internacional mensajeria",logistica
+"mrw entrega urgente paquete",logistica
+"envio pedido transporte mensajeria",logistica
+
+"coursera curso online certificado",educacion
+"udemy programacion python curso",educacion
+"academia clases ingles formacion",educacion
+"aprendizaje online estudio curso",educacion
