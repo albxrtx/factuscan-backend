@@ -29,13 +29,10 @@ text,label
 "recibo luz gas electricidad casa",suministros
 
 "movistar fibra internet 600mb factura",telecomunicaciones
-"vodafone tarifa movil datos ilimitados",telecomunicaciones
+"vodafone tarifa móvil datos ilimitados 5g",telecomunicaciones
 "orange internet hogar router wifi",telecomunicaciones
-"factura telefono fijo internet mensual",telecomunicaciones
-"fibra internet 600 mb router wifi",telecomunicaciones
-"tarifa movil datos ilimitados 5g",telecomunicaciones
-"linea fija telefono internet hogar",telecomunicaciones
-"vodafone fibra optica internet",telecomunicaciones
+"factura teléfono fijo internet mensual",telecomunicaciones
+"fibra internet 600 mb router wifi televisión",telecomunicaciones
 
 "amazon compra online pedido envio",compras
 "zara ropa moda tienda ticket",compras

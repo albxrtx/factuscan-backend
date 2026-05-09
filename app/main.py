@@ -1,20 +1,31 @@
-from colorama import Fore
 from app.services.pdf.pdf_extraction import (
     extract_pdf,
     extract_company_name,
     extract_total_amount,
     extract_date,
 )
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 import os
 import shutil
 import pdfplumber
+from slowapi.errors import RateLimitExceeded
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
 
 from app.ml.category.predict import predict_category
 from app.ml.items.predict import is_item
 
+from app.file.services.file_service import (
+    is_valid_pdf,
+    save_temp_file,
+    remove_temp_file,
+)
+
 app = FastAPI()
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,31 +35,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-# todo cambiar el tema de los nombres de las empresas a reglas y no con ML
-
-
-@app.get("/")
-async def home():
-    return {"message": "Hola desde FastAPI"}
+# todo Cambiar el return del enpoint (/upload)
 
 
 @app.post("/upload")
-async def upload(file: UploadFile):
-    # Creamos una ruta para el archivo temporal
-    file_path = f"app/temp/{file.filename}"
-
-    os.makedirs("app/temp", exist_ok=True)
-
-    # Creamos un archivo temporal para poder trabajar con el
-    with open(file_path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-
+@limiter.limit("5/minute")
+async def upload(request: Request, file: UploadFile):
+    file_path = None
     try:
-        # Comprobamos que pdfplumber pueda abrir el archivo
-        # para comprobar que sea un .pdf
-        with pdfplumber.open(file_path):
-            pass
+        file_path = save_temp_file(file)
+
+        if not is_valid_pdf(file_path):
+            raise HTTPException(400, "El archivo debe ser un PDF")
+
         # Extraemos los datos del pdf
         lines = extract_pdf(file_path)
         item_list = []
@@ -62,17 +61,11 @@ async def upload(file: UploadFile):
         if lines == "":
             raise HTTPException(404, "No ha sido posible leer el PDF")
 
-        # Una vez obtenido la información
-        # eliminamos el archivo temporal
-        if os.path.exists(file_path):
-            os.remove(file_path)
-
     except Exception as e:
-        if os.path.exists(file_path):
-            os.remove(file_path)
-
+        remove_temp_file(file_path)
         raise HTTPException(400, "El archivo debe ser un PDF")
-
+    finally:
+        remove_temp_file(file_path)
     return {
         "company_name": f"{extract_company_name(lines)}",
         "date": f"{extract_date(lines)}",
@@ -81,20 +74,7 @@ async def upload(file: UploadFile):
     }
 
 
-# @app.get("/health")
-# async def check_health():
-#     return {"status": "OK"}
-
-
-# lines = extract_pdf("files/factura_2.pdf")
-# count = 0
-# for line in lines:
-#     print(f"{Fore.GREEN + str()}  {Fore.LIGHTBLUE_EX + line}")
-#     count += 1
-
-# company_name = extract_company_name(lines)
-# total_amount = extract_total_amount(lines)
-# date = extract_date(lines)
-# print("Nombre: ", company_name)
-# print("Total: ", total_amount)
-# print("Fecha: ", date)
+@app.get("/health")
+@limiter.limit("5/minute")
+async def check_health(request: Request):
+    return {"status": "OK"}
