@@ -9,19 +9,19 @@ model = joblib.load(MODEL_PATH)
 def is_item(line):
     line_lower = line.lower().strip()
 
-    # ❌ EMAIL
+    # Evitamos emails
     if re.search(r"\S+@\S+", line_lower):
         return False
 
-    # ❌ TELÉFONO
+    # Evitamos números de teléfono
     if re.search(r"(\+?\d[\d\s\-]{7,})", line_lower):
         return False
 
-    # ❌ DNI / NIF
+    # Evitamos DNI o NIF
     if re.search(r"\b\d{7,8}[a-zA-Z]\b", line_lower):
         return False
 
-    # ❌ PALABRAS CLAVE
+    # Evitamos palabras claves en la línea
     if any(
         word in line_lower
         for word in [
@@ -41,9 +41,8 @@ def is_item(line):
     ):
         return False
 
-    # ❌ DEMASIADO CORTO (ruido típico)
+    # Evitamos si la línea es muy corta
     if len(line_lower.split()) <= 1:
         return False
 
-    # 👉 SI PASA TODO → ML
     return model.predict([line])[0] == "item"
